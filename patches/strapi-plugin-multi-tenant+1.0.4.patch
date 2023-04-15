@@ -1,0 +1,40 @@
+diff --git a/node_modules/strapi-plugin-multi-tenant/server/content-types/user-group/lifecycles.js b/node_modules/strapi-plugin-multi-tenant/server/content-types/user-group/lifecycles.js
+index 4a74647..2bbe811 100644
+--- a/node_modules/strapi-plugin-multi-tenant/server/content-types/user-group/lifecycles.js
++++ b/node_modules/strapi-plugin-multi-tenant/server/content-types/user-group/lifecycles.js
+@@ -1,23 +1,23 @@
+-const { ValidationError } = require("@strapi/utils").errors;
++const { ValidationError } = require('@strapi/utils').errors
+ 
+ module.exports = {
+   beforeCreate(event) {
+-    const { parent, children } = event.params.data;
++    const { parent, children } = event.params.data
+ 
+-    if (children?.includes(parent)) {
+-      throw new ValidationError("User group cannot be both child and parent");
++    if (children?.includes && children?.includes(parent)) {
++      throw new ValidationError('User group cannot be both child and parent')
+     }
+   },
+   beforeUpdate(event) {
+-    const { parent, children } = event.params.data;
+-    const { id } = event.params.where;
++    const { parent, children } = event.params.data
++    const { id } = event.params.where
+ 
+-    if (children?.includes(parent)) {
+-      throw new ValidationError("User group cannot be both child and parent");
++    if (children?.includes && children?.includes(parent)) {
++      throw new ValidationError('User group cannot be both child and parent')
+     }
+ 
+-    if (children?.includes(id) || parent === id) {
+-      throw new ValidationError("User group cannot be its own child or parent");
++    if (children?.includes && (children?.includes(id) || parent === id)) {
++      throw new ValidationError('User group cannot be its own child or parent')
+     }
+   },
+-};
++}
+\ No newline at end of file
