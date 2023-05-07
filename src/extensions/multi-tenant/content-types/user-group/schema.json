@@ -42,7 +42,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::workspace.workspace",
-      "mappedBy": "multi_tenant_user_group"
+      "mappedBy": "userGroup"
     }
   }
 }

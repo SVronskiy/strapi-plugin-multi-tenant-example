@@ -4,7 +4,8 @@
   "info": {
     "singularName": "workspace",
     "pluralName": "workspaces",
-    "displayName": "Workspace"
+    "displayName": "Workspace",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -14,7 +15,7 @@
     "name": {
       "type": "string"
     },
-    "multi_tenant_user_group": {
+    "userGroup": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::multi-tenant.user-group",
